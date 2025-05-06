@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import RoomList from './components/RoomList';
+import BookingForm from './components/BookingForm';
 
 function App() {
+  const [rooms, setRooms] = useState([]);
+
+  useEffect(() => {
+    fetch('/rooms')
+      .then((res) => res.json())
+      .then((data) => setRooms(data));
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hotel Management</h1>
+      <RoomList rooms={rooms} />
+      <BookingForm rooms={rooms} />
     </div>
   );
 }

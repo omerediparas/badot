@@ -1,13 +1,20 @@
-FROM node:14 AS build
+FROM node:16-slim
 
-WORKDIR /usr/src/app
+# Set working directory
+WORKDIR /app
 
-COPY package*.json ./
-
+# Copy package.json and package-lock.json (if available) and install dependencies
+COPY package.json package-lock.json* /app/
 RUN npm install
 
-COPY . .
+# Copy the rest of the app
+COPY . /app
 
+# Expose the port
 EXPOSE 3000
 
+# Set the environment to production (optional, if working on a production app)
+ENV NODE_ENV=development
+
+# Run React app
 CMD ["npm", "start"]
