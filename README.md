@@ -1,2 +1,1 @@
-# badot
-BADOT | Hotel Management Web Application for 
+start by `docker compose up --build` 
