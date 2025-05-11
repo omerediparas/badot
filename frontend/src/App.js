@@ -1,22 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RoomList from './components/RoomList';
 import BookingForm from './components/BookingForm';
+import Homepage from './components/Homepage';
 
 function App() {
-  const [rooms, setRooms] = useState([]);
-
-  useEffect(() => {
-    fetch('/rooms')
-      .then((res) => res.json())
-      .then((data) => setRooms(data));
-  }, []);
-
   return (
-    <div className="App">
-      <h1>Hotel Management</h1>
-      <RoomList rooms={rooms} />
-      <BookingForm rooms={rooms} />
-    </div>
+    <Router>
+      <div className="App p-4">
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
