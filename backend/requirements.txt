@@ -2,4 +2,6 @@ Flask
 Flask-MySQL
 Flask-Cors
 mysqlclient
+flask
 flask_sqlalchemy
+flask_cors

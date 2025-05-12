@@ -1,23 +1,28 @@
-from flask_sqlalchemy import SQLAlchemy
 
-db = SQLAlchemy()
+from datetime import datetime
+from app import db
 
-class Room(db.Model):
-    __tablename__ = 'rooms'
-    
+
+class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    number = db.Column(db.Integer, unique=True)
-    type = db.Column(db.String(50))
-    price = db.Column(db.Integer)
-    is_booked = db.Column(db.Boolean, default=False)
+    username = db.Column(db.String(64), unique=True)
+    email = db.Column(db.String(120), unique=True)
+    wallet_balance = db.Column(db.Float, default=0.0)
+    #followed = db.relationship('OrganizerFollow', back_populates='user')
 
-class Booking(db.Model):
-    __tablename__ = 'bookings'
-    
+class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    guest_name = db.Column(db.String(100))
-    room_id = db.Column(db.Integer, db.ForeignKey('rooms.id'))
-    check_in = db.Column(db.String(50))
-    check_out = db.Column(db.String(50))
+    name = db.Column(db.String(128))
+    category = db.Column(db.String(50))
+    date = db.Column(db.DateTime)
+    venue = db.Column(db.String(128))
+    price = db.Column(db.Float)
+    image_url = db.Column(db.String(255)) 
 
-    room = db.relationship("Room", backref="bookings")
+class Ticket(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    event_id = db.Column(db.Integer, db.ForeignKey('event.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    seat_number = db.Column(db.String(10))
+    guest_name = db.Column(db.String(128))
+    qr_code_path = db.Column(db.String(128))

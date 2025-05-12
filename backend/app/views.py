@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from .models import db, Room, Booking
-from .app import init_app
+from . import init_app
 
 app = init_app()
 
