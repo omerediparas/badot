@@ -11,17 +11,18 @@ class User(db.Model):
     #followed = db.relationship('OrganizerFollow', back_populates='user')
 
 class Event(db.Model):
+    __tablename__ = 'events'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(128))
     category = db.Column(db.String(50))
     date = db.Column(db.DateTime)
     venue = db.Column(db.String(128))
     price = db.Column(db.Float)
-    image_url = db.Column(db.String(255)) 
+    image_url = db.Column(db.String(255))
 
 class Ticket(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    event_id = db.Column(db.Integer, db.ForeignKey('event.id'))
+    event_id = db.Column(db.Integer, db.ForeignKey('events.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     seat_number = db.Column(db.String(10))
     guest_name = db.Column(db.String(128))
