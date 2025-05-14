@@ -13,8 +13,8 @@ const EventCard = ({ event }) => {
       />
       <div className="event-content">
         <h3>{event.name}</h3>
-        <p className="event-date">{event.date}</p>
-        <p className="event-venue">{event.venue}</p>
+        <p className="event-date">{event.date},{event.venue_city}</p>
+        <p className="event-venue">{event.venue_name}</p>
         <Link to={`/event/${event.id}`} className="event-link">View Details</Link>
       </div>
     </div>

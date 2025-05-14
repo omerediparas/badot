@@ -24,9 +24,11 @@ ENV FLASK_ENV=development
 # Copy the rest of the app (adjust if necessary)
 COPY ./app /app
 
+COPY wait-for-it.sh /app/wait-for-it.sh
+RUN chmod +x /app/wait-for-it.sh
+
 # Expose the port
 EXPOSE 5000
 
 # Run Flask app
-CMD ["python", "app.py"]
 CMD ["flask", "run", "--host", "0.0.0.0", "--port", "5000"]

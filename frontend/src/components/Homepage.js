@@ -7,15 +7,15 @@ const Homepage = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/events/all")
+    fetch("http://localhost:5000/api/event/all")
       .then((res) => res.json())
       .then((data) => setEvents(data))
       .catch((err) => console.error(err));
   }, []);
 
-  const theaters = events.filter((e) => e.category === "Theater");
-  const festivals = events.filter((e) => e.category === "Festival");
-  const concerts = events.filter((e) => e.category === "Concert");
+  const theaters = events.filter((e) => e.type === "Theatre");
+  const concerts = events.filter((e) => e.type === "Concert");
+  const festivals = events.filter((e) => e.type === "Other");
 
   return (
     <div className="homepage">
@@ -34,7 +34,7 @@ const Homepage = () => {
       </section>
 
       <section className="event-section">
-        <h2>Festivals</h2>
+        <h2>Other</h2>
         <div className="event-scroll-container">
           {festivals.map((event) => (
             <EventCard key={event.id} event={event} />
