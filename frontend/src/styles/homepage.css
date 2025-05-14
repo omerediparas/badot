@@ -1,0 +1,75 @@
+.homepage-container {
+  min-height: 100vh;
+  padding: 2rem 2rem 4rem;
+  background: linear-gradient(to bottom, #f0f8ff, #ffffff);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.homepage-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.homepage-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.homepage-header p {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin-top: 0.5rem;
+}
+
+.homepage-filter-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.homepage-filter-bar select,
+.homepage-filter-bar button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.homepage-filter-bar button:hover {
+  background-color: #f5f5f5;
+}
+
+.event-section {
+  margin-bottom: 3rem;
+}
+
+.event-section h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+  padding-left: 0.5rem;
+}
+
+.event-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.2rem;
+  padding-bottom: 0.5rem;
+  scroll-behavior: smooth;
+}
+
+.event-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.event-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}

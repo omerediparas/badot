@@ -1,0 +1,56 @@
+.event-card {
+  min-width: 320px;
+  max-width: 320px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.event-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.event-content {
+  padding: 0.8rem;
+}
+
+.event-content h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  color: #2c3e50;
+}
+
+.event-date,
+.event-venue {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0.1rem 0;
+}
+
+.event-link {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0;
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.event-link:hover {
+  background-color: #0056b3;
+}

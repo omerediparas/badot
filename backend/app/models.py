@@ -4,6 +4,7 @@ from app import db
 
 
 class User(db.Model):
+    __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True)
     email = db.Column(db.String(120), unique=True)
@@ -21,9 +22,9 @@ class Event(db.Model):
     image_url = db.Column(db.String(255))
 
 class Ticket(db.Model):
+    __tablename__ = "tickets"
     id = db.Column(db.Integer, primary_key=True)
     event_id = db.Column(db.Integer, db.ForeignKey('events.id'))
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     seat_number = db.Column(db.String(10))
     guest_name = db.Column(db.String(128))
-    qr_code_path = db.Column(db.String(128))

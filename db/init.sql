@@ -20,7 +20,22 @@ CREATE TABLE events (
     image_url VARCHAR(255)
 );
 
+CREATE TABLE tickets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    event_id INT,
+    user_id INT,
+    seat_number VARCHAR(10),
+    guest_name VARCHAR(128),
+    FOREIGN KEY (event_id) REFERENCES events(id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+
 INSERT INTO events (name, category, date, venue, price, image_url)
 VALUES
-  ('Rock Concert', 'Concert', '2025-05-20 20:00:00', 'City Arena', 50.00, '/images/concert1.jpg'),
-  ('Theater Play', 'Theater', '2025-06-15 19:00:00', 'Downtown Theater', 35.00, '/images/play1.jpg');
+  ('test event 1', 'Concert', '2025-05-20 20:00:00', 'City Arena', 50.00, 'static/images/to-be-or-not-to-be-that-is-the-question.jpg'),
+  ('test event 2', 'Theater', '2025-06-15 19:00:00', 'Downtown Theater', 35.00, 'static/images/to-be-or-not-to-be-that-is-the-question.jpg'),
+  ('test event 3', 'Concert', '2025-05-20 20:00:00', 'City Arena', 50.00, 'static/images/to-be-or-not-to-be-that-is-the-question.jpg'),
+  ('test event 4', 'Theater', '2025-06-15 19:00:00', 'Downtown Theater', 35.00, 'static/images/to-be-or-not-to-be-that-is-the-question.jpg'),
+  ('test event 5', 'Festival', '2025-05-20 20:00:00', 'City Arena', 50.00, 'static/images/to-be-or-not-to-be-that-is-the-question.jpg'),
+  ('test event 6', 'Theater', '2025-06-15 19:00:00', 'Downtown Theater', 35.00, 'static/images/to-be-or-not-to-be-that-is-the-question.jpg');

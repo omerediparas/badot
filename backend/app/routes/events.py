@@ -1,19 +1,24 @@
 from flask import Blueprint, jsonify
 from app.models import Event
+from app.db_utils import get_connection
 
 bp = Blueprint('events', __name__, url_prefix='/api/events')
 
-@bp.route('/', methods=['GET'])
+@bp.route('/all', methods=['GET'])
 def get_events():
-    events = Event.query.all()
-    return jsonify([
-        {
-            "id": e.id,
-            "name": e.name,
-            "category": e.category,
-            "date": e.date.strftime('%Y-%m-%d'),
-            "venue": e.venue,
-            "price": e.price,
-            "image_url": e.image_url
-        } for e in events
-    ])
+    connection = get_connection()
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM events")
+            events = cursor.fetchall()
+            for event in events:
+                event['date'] = event['date'].strftime('%Y-%m-%d')
+        return jsonify(events)
+    finally:
+        connection.close()
+
+@bp.route("/create", methods=['POST'])
+def create_event():
+    #TODO
+    pass
+
