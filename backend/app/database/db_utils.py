@@ -8,5 +8,5 @@ def get_connection():
         user=Config.MYSQL_USER,
         password=Config.MYSQL_PASSWORD,
         database=Config.MYSQL_DB,
-        cursorclass=pymysql.cursors.DictCursor  # So rows come as dictionaries
+        cursorclass=pymysql.cursors.DictCursor  
     )

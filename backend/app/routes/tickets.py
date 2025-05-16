@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
 from app.models import Ticket
-from app.db_utils import get_connection
+from app.database.db_utils import get_connection
 
 bp = Blueprint('tickets', __name__, url_prefix='/api/tickets')
 

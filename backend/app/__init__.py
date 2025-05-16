@@ -14,6 +14,9 @@ def create_app():
     from app.routes import events
     app.register_blueprint(events.bp) 
 
+    from app.routes import auth_routes
+    app.register_blueprint(auth_routes.auth_bp)
+
     with app.app_context():
         db.create_all()
 

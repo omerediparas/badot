@@ -5,3 +5,5 @@ mysqlclient
 flask
 flask_sqlalchemy
 flask_cors
+PyJWT
+werkzeug

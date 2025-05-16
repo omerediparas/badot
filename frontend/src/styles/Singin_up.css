@@ -1,0 +1,217 @@
+
+
+
+.signup-form,
+.login-form {
+  flex: 1 1 50%;
+  padding: 40px 30px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-panel {
+  flex: 1 1 50%;
+  background: linear-gradient(90deg, #0a4d0a, #00b94f);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 30px;
+  text-align: center;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  min-height: 100%;
+}
+
+.right-panel h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.right-panel strong {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.right-panel p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.auth-container {
+  display: flex;
+  max-width: 800px;
+  min-height: 450px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+}
+
+/* Left side form */
+.auth-container form {
+  flex: 1;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Form header */
+.auth-container h2 {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 28px;
+  color: #111;
+}
+
+/* Role toggle container */
+.role-switch {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.role-switch button {
+  flex: 1;
+  padding: 10px 0;
+  border: 1px solid #ccc;
+  border-right: none;
+  background-color: #fff;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px 0 0 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+.role-switch button:last-child {
+  border-radius: 0 6px 6px 0;
+  border-right: 1px solid #ccc;
+}
+
+.role-switch button.active {
+  background-color: #0b4700;
+  color: #fff;
+  border-color: #0b4700;
+  pointer-events: none;
+}
+
+/* Input fields */
+.auth-container input[type="text"],
+.auth-container input[type="email"],
+.auth-container input[type="password"] {
+  padding: 12px 15px;
+  margin-bottom: 18px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.auth-container input[type="text"]:focus,
+.auth-container input[type="email"]:focus,
+.auth-container input[type="password"]:focus {
+  border-color: #0b4700;
+}
+
+/* Placeholder styling */
+.auth-container input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+
+/* Required field asterisk label */
+.auth-container label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+/* Buttons */
+.auth-container button[type="submit"] {
+  background-color: #0b4700;
+  color: #fff;
+  border: none;
+  padding: 14px 0;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 3px 8px rgba(11, 71, 0, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.auth-container button[type="submit"]:hover {
+  background-color: #0d5800;
+}
+
+/* Error message */
+.auth-container .error {
+  color: #d92b2b;
+  font-weight: 600;
+  margin-bottom: 14px;
+  font-size: 14px;
+  min-height: 18px;
+}
+
+/* Link text below form */
+.auth-container p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.auth-container p a {
+  color: #0b4700;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.auth-container p a:hover {
+  text-decoration: underline;
+}
+
+
+.auth-container > div.right-panel {
+  flex: 1 1 50%; /* Ensure same as form side */
+  background: linear-gradient(90deg, #0b4700, #1dc75f);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 40px;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  min-height: auto; /* Let it grow with content */
+  box-sizing: border-box; /* Include padding inside width */
+}
+
+/* Brand name */
+.auth-container > div.right-panel h1 {
+  font-weight: 900;
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+}
+
+/* Right panel welcome text */
+.auth-container > div.right-panel strong {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 10px;
+}

@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from app.db_utils import get_connection
+from app.database.db_utils import get_connection
 
 bp = Blueprint('event', __name__, url_prefix='/api/event')
 

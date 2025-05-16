@@ -27,8 +27,8 @@ const Homepage = () => {
       <section className="event-section">
         <h2>Theaters</h2>
         <div className="event-scroll-container">
-          {theaters.map((event) => (
-            <EventCard key={event.id} event={event} />
+          {theaters.map((event, index) => (
+            <EventCard key={event.id || index} event={event} />
           ))}
         </div>
       </section>
